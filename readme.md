@@ -15,14 +15,16 @@ Export creds environment variable
 
 
 ## Prepare data
-Use notebook `create_data_from_whatsapp_export.ipynb` to parse Whatsapp chat export.
+Use notebook `create_data_from_whatsapp_export.ipynb` to parse Whatsapp chat export and save JSONL files to use to train custom GPT-3 models.
 
 `openai tools fine_tunes.prepare_data -f data_alex.csv`
+
 `openai tools fine_tunes.prepare_data -f data_yashodan.csv`
 
 ## Train models
 
 `openai api fine_tunes.create -t data_alex_prepared.jsonl -m curie`
+
 `openai api fine_tunes.create -t data_yashodan_prepared.jsonl -m curie`
 
 Trained models:
